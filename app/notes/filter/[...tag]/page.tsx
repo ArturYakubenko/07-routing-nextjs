@@ -17,6 +17,7 @@ import css from "@/app/notes/Notes.client.module.css";
 import { useParams } from "next/navigation";
 
 
+
 const NotesClient = () => {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
@@ -62,7 +63,7 @@ const NotesClient = () => {
       </header>
 
       {isLoading && <Loader />}
-      {isError && <ErrorMessage message="Помилка при завантаженні нотаток" />}
+     {isError && <ErrorMessage  message="Помилка при завантаженні нотаток"/>}
       {!isLoading && notes.length === 0 && <EmptyState />}
       {notes.length > 0 && <NoteList data={notes} />}
 
