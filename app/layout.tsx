@@ -4,7 +4,7 @@ import Header from "@/components/Header/Header";
 import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
 import Footer from "@/components/Footer/Footer";
 
-
+////
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
