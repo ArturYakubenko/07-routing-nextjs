@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation"
 import {fetchNoteById} from "@/app/lib/api"
 import Loader from "@/app/components/Loader/Loader"; 
 import Modal from "@/app/components/Modal/Modal";
-import { useState, useEffect } from "react";
+
 
 const NoteDetailsClient = () => {
     const {id} = useParams()
@@ -19,7 +19,7 @@ const NoteDetailsClient = () => {
 
     const {data: note, isLoading, isError} = useQuery({
        queryKey: ["note", noteId],
-        queryFn: () => fetchNoteById(noteId),
+        queryFn: () => fetchNoteById(noteId as string),
         enabled: !!noteId,   
     })
     if(isLoading) {
