@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header/Header";
-import TanstackProvider from "@/app/TanstackProvider/TanstackProvider";
+import TanstackProvider from "@/components/TanstackProvider/TanstackProvider";
 import Footer from "@/components/Footer/Footer";
-import Modal from "@/components/Modal/Modal";
+
 
 
 const geistSans = Geist({
