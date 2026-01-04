@@ -17,7 +17,7 @@ const NoteDetailsClient = () => {
         router.back(); 
     };
 
-    const {data: note, isLoading, isError} = useQuery({
+    const {data: note, isLoading, isError, error} = useQuery({
        queryKey: ["note", noteId],
         queryFn: () => fetchNoteById(noteId as string),
         enabled: !!noteId,   
