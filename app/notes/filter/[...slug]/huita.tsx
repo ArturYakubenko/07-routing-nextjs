@@ -16,7 +16,7 @@ import EmptyState from "@/components/EmptyState/EmptyState";
 import css from "@/app/notes/Notes.client.module.css";
 import { useParams } from "next/navigation";
 
-///
+//////
 
 const NotesClient = () => {
   const [page, setPage] = useState(1);
