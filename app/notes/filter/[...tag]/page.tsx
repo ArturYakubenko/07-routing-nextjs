@@ -29,7 +29,7 @@ const NotesClient = () => {
 
   const params = useParams()
   
-  const tagUrl = params.tag[0] 
+ const tagUrl = Array.isArray(params?.tag) ? params.tag[0] : params?.tag;
 
 
 
