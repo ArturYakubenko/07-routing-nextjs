@@ -1,0 +1,34 @@
+.container {
+    width: 100%;
+    padding: 1rem 0;
+    background-color: #f4f4f4; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuList {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    
+  
+    display: flex;
+    gap: 2rem; 
+}
+
+.menuLink {
+    text-decoration: none; 
+    color: #0070f3;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.menuLink:hover,
+.menuLink:focus {
+    color: #0056b3;
+    text-decoration: underline;
+}
