@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { useDebounce } from "use-debounce";
-import { fetchNotes } from "@/app/lib/api";
+import { fetchNotes } from "@/lib/api";
 import type { FetchNotesResponse } from "@/app/types/note";
 import Modal from "@/components/Modal/Modal";
 import NoteForm from "@/components/NoteForm/NoteForm";

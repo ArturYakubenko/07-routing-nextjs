@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import * as Yup from "yup";
 import css from "./NoteForm.module.css";
-import { createNote } from '@/app/lib/api'
+import { createNote } from '@/lib/api'
 
 export const NOTE_TAGS = ["Todo", "Work", "Personal", "Meeting", "Shopping"] as const;
 export type NoteTag = (typeof NOTE_TAGS)[number];
