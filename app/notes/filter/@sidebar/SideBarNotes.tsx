@@ -4,7 +4,7 @@ import css from "./SideBarNotes.module.css"
 
  const SideBarNotes = () => {
   return (
-    <div>
+    <div className={css.container}>
       <ul className={css.menuList}>
         <li className={css.menuItem}>
           <Link href={`/notes/filter/All`} className={css.menuLink}>

@@ -1,0 +1,58 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.content h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 8px;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.tag {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.date {
+  font-style: italic;
+}
+
+.description {
+  line-height: 1.6;
+  color: #333;
+  white-space: pre-wrap; /* Сохраняет переносы строк из текста заметки */
+}
+
+.closeButton {
+  align-self: flex-end;
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.closeButton:hover {
+  background-color: #0051bb;
+}
+
+.closeButton:active {
+  transform: scale(0.98);
+}

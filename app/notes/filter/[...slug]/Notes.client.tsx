@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 
 import { useState } from "react";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
@@ -14,11 +14,12 @@ import Loader from "@/components/Loader/Loader";
 import ErrorMessage from "@/components/ErrorMessage/ErrorMessage";
 import EmptyState from "@/components/EmptyState/EmptyState";
 import css from "@/app/notes/Notes.client.module.css";
-import { useParams } from "next/navigation";
 
-//////
+interface NotesClientProps {
+  initialTag: string;
+}
 
-const NotesClient = () => {
+const NotesClient = ({ initialTag }: NotesClientProps) => {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -27,22 +28,16 @@ const NotesClient = () => {
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
 
-
-  const params = useParams()
-  
- const tagUrl = Array.isArray(params?.tag) ? params.tag[0] : params?.tag;
-
-
-
   const onSearch = (value: string) => {
     setSearch(value);
     setPage(1);
   };
 
   const { data, isError, isLoading } = useQuery<FetchNotesResponse, Error>({
-    queryKey: ["notes", page, debouncedSearch],
-    queryFn: () => fetchNotes(page, debouncedSearch, 12, tagUrl),
+    queryKey: ["notes", page, debouncedSearch, initialTag],
+    queryFn: () => fetchNotes(page, debouncedSearch, 12, initialTag),
     placeholderData: keepPreviousData,
+    staleTime: 1000 * 60, 
   });
 
   const notes = data?.notes ?? [];
@@ -63,7 +58,7 @@ const NotesClient = () => {
       </header>
 
       {isLoading && <Loader />}
-     {isError && <ErrorMessage  message="Помилка при завантаженні нотаток"/>}
+      {isError && <ErrorMessage message="Помилка при завантаженні нотаток" />}
       {!isLoading && notes.length === 0 && <EmptyState />}
       {notes.length > 0 && <NoteList data={notes} />}
 
@@ -74,6 +69,6 @@ const NotesClient = () => {
       )}
     </div>
   );
-}
+};
 
-export default NotesClient
+export default NotesClient;

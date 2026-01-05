@@ -4,9 +4,9 @@ import Link from "next/link"
 const Header = () => {
     return (
         <header className={css.header}>
-  <a href="/" aria-label="Home">
+  <Link href="/" aria-label="Home">
     NoteHub
-  </a>
+  </Link>
   <nav aria-label="Main Navigation">
     <ul className={css.navigation}>
       <li>

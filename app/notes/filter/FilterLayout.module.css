@@ -1,0 +1,13 @@
+.layoutContainer {
+  display: flex; /* Розташовує блоки в ряд */
+  min-height: 100vh;
+}
+
+.sidebarWrapper {
+  width: 300px; /* Або будь-яка інша фіксована ширина */
+  flex-shrink: 0;
+}
+
+.mainContent {
+  flex-grow: 1; /* Основний контент займає решту простору */
+}

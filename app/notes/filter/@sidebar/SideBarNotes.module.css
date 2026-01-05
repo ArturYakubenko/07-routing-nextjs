@@ -14,10 +14,9 @@
     list-style: none; 
     padding: 0;
     margin: 0;
-    
-  
-    display: flex;
-    gap: 2rem; 
+    gap: 12px; 
+    align-items: center;
+    justify-content: center;
 }
 
 .menuLink {

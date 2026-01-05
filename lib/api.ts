@@ -79,8 +79,8 @@ export const createNote = async (noteData: CreateNoteParams): Promise<Note> => {
 
 // details
 
-export const fetchNoteById = async (id: string) => {
-  const response = await axios.get(`${API_URL}/${id}`, {
+export const fetchNoteById = async (id: string): Promise<Note> => {
+  const response = await axios.get<Note>(`${API_URL}/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`
     }
